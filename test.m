@@ -169,7 +169,8 @@ function pushbutton3_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 global breadth width data;
-data = start(breadth, width);
+[data,minmax] = start(breadth, width);
+set(handles.text9,'String',strcat(num2str(minmax(1))," to ",num2str(minmax(2))))
 
 
 % --- Executes on button press in pushbutton4.
